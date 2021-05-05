@@ -1,0 +1,72 @@
+﻿@model Website.Models.Faculty
+
+@{
+    ViewBag.Title = "Faculty";
+}
+<link href="~/assets/css/assets.css" rel="stylesheet" />
+<link href="~/assets/css/typography.css" rel="stylesheet" />
+<link href="~/assets/css/style.css" rel="stylesheet" />
+<link href="~/assets/css/shortcodes/shortcodes.css" rel="stylesheet" />
+<link href="~/assets/css/color/color-1.css" rel="stylesheet" />
+<body id="bg">
+    <div class="page-wraper">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="account-form">
+                    <div class="account-head" style="background-image:url(~/images/background/bg2.jpg);">
+                        <a href="index.html"><img src="~/assets/images/logo-white-2.png" alt=""></a>
+                    </div>
+                    <div class="account-form-inner">
+                        <div class="account-container">
+                            <div class="heading-bx left">
+                                <h2 class="title-head">Login to your <span>Account</span></h2>
+                                <p>Don't have an account? <a href="@Url.Action("Facultyregister", "Home")">Create one here</a></p>
+                            </div>
+                            <form class="contact-bx">
+                                <table>
+                                    <tr>
+                                        <td>@Html.LabelFor(m => m.UserId)</td>
+                                        <td>@Html.EditorFor(m => m.UserId)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelFor(m => m.Password)</td>
+                                        <td>@Html.EditorFor(m => m.Password)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><button name="submit" type="submit" value="Submit" class="btn button-md">Login</button></td>
+                                    </tr>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        }
+        <!-- External JavaScripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+        <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+        <script src="assets/vendors/counter/waypoints-min.js"></script>
+        <script src="assets/vendors/counter/counterup.min.js"></script>
+        <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+        <script src="assets/vendors/masonry/masonry.js"></script>
+        <script src="assets/vendors/masonry/filter.js"></script>
+        <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+        <script src="assets/js/functions.js"></script>
+        <script src="assets/js/contact.js"></script>
+        <script src='assets/vendors/switcher/switcher.js'></script>
+</body>
+
+</html>
+
+

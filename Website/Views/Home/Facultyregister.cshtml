@@ -1,0 +1,129 @@
+﻿@model Website.Models.Faculty
+
+@{
+    ViewBag.Title = "Facultyregister";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+<body id="bg">
+    <div class="page-wraper">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="account-form">
+                    <div class="account-head" style="background-image:url('~/assets/images/background/bg2.jpg');">
+                        <a href="index.html"><img src="~/assets/images/logo-white-2.png" alt=""></a>
+                    </div>
+                    <div class="account-form-inner">
+                        <div class="account-container">
+                            <div class="heading-bx left">
+                                <h2 class="title-head">Register a new <span>Account</span></h2>
+                                <p>Back to login page<a href="@Url.Action("Faculty", "Home")">Click here</a></p>
+                            </div>
+                            <form class="contact-bx">
+                                <table>
+                                    <tr>
+                                        <td> @Html.LabelFor(model => model.FirstName)</td>
+                                        <td>@Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td> @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.LastName)</td>
+                                        <td>@Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.Dob)</td>
+                                        <td>@Html.EditorFor(model => model.Dob, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.gender)</td>
+
+                                        <td>@Html.EnumDropDownListFor(model => model.gender, "Select", new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.Contact)</td>
+                                        <td>@Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.Email)</td>
+                                        <td>@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })</td>
+                                    </tr>
+                                    <tr>
+                                        <td> @Html.LabelFor(model => model.Password)</td>
+
+                                        <td> @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</td>
+
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.UserCatagory)</td>
+
+                                        <td>@Html.EnumDropDownListFor(model => model.UserCatagory, "", new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.UserCatagory, "", new { @class = "text-danger" })</td>
+
+                                    </tr>
+                                        <td>@Html.LabelFor(model => model.skillFamily)</td>
+                                        <td>@Html.EnumDropDownListFor(model => model.skillFamily, "Choose", new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.skillFamily, "", new { @class = "text-danger" })</td>
+                                    <tr>
+
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.SecurityQuestion)</td>
+                                        <td>@Html.EditorFor(model => model.SecurityQuestion, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.SecurityQuestion, "", new { @class = "text-danger" })</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.SecurityQueAnswer)</td>
+                                        <td>@Html.EditorFor(model => model.SecurityQueAnswer, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                        <td>@Html.ValidationMessageFor(model => model.SecurityQueAnswer, "", new { @class = "text-danger" })</td>
+                                     </tr>
+
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.ModuleName)</td>
+                                         <td>@Html.EditorFor(model => model.ModuleName, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                         <td>@Html.ValidationMessageFor(model => model.ModuleName, "", new { @class = "text-danger" })</td>
+                                    </tr>
+
+                                    <tr>
+                                       <td>@Html.LabelFor(model => model.Proficiency)</td>
+                                       <td>@Html.EnumDropDownListFor(model => model.Proficiency, "", new { htmlAttributes = new { @class = "form-control" } })</td>
+                                       <td>@Html.ValidationMessageFor(model => model.Proficiency, "", new { @class = "text-danger" })</td>   
+                                    </tr>
+
+                                    <tr>
+                                        <td>@Html.LabelFor(model => model.TeachingHours)</td>
+                                                <td>@Html.EditorFor(model => model.TeachingHours, new { htmlAttributes = new { @class = "form-control" } })</td>
+                                               <td> @Html.ValidationMessageFor(model => model.TeachingHours, "", new { @class = "text-danger" })</td>
+                                    </tr>
+                                    <tr>
+                                        <td><button name="submit" type="submit" value="Submit" class="btn button-md">Login</button></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        }
+
